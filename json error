@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type":"object",
+    "properties": {
+        "status":{
+            "const":"fail"
+        },
+    "message":{
+        "enum": [
+            "private range",
+            "reseved range",
+            "invalid query"
+        ]
+    },
+    "query":{
+        "type":"string"
+    }
+    }
+}
