@@ -1,0 +1,97 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type":"object",
+    "definitions": {
+        "twoLetterCode":{
+            "type":"string",
+            "pattern": "^[A-Z]{2}$"
+        },
+        "threeLetterCode":{
+            "type":"string",
+            "pattern": "^[A-Z]{2}$"
+        }
+    },
+    "properties": {
+        "status":{
+            "const":"success"
+        },
+        "continent":{
+            "type":"string"
+        },
+        "continentCode":{
+            "$ref": "#/definition/twoLetterCode"
+        },
+        "country":{
+            "type":"string",
+            "pattern": "^[A-Z]{2}$"
+        },
+        "continentCode":{
+            "$ref": "#/definition/twoLetterCode"
+        },
+        "region":{
+            "$ref": "#/definition/twoLetterCode"
+        },
+        "regionName":{
+            "type":"string"
+        },
+        "city":{
+            "type":"string"
+        },
+        "district":{
+            "type":"string"
+        },
+        "zip":{
+            "type":"string"
+        },
+        "lat":{
+            "type":"string",
+            "minimum": -90,
+            "maximum": 90
+        },
+        "lon":{
+            "type":"number",
+            "minimum": -180,
+            "maximum": 180
+        },
+        "timezone":{
+            "type":"string"
+        },
+        "offset":{
+            "type":"string"
+        },
+        "currency":{
+            "$ref": "#/definition/twoLetterCode"
+        },
+        "isp":{
+            "type":"string"
+        },
+        "org":{
+            "type":"string"
+        },
+        "as":{
+            "type":"string"
+        },
+        "asname":{
+            "type":"string"
+        },
+        "reverse":{
+            "type":"string"
+        },
+        "mobile":{
+            "type":"boolean"
+        },
+        "proxy":{
+            "type":"boolean"
+        },
+        "hosting":{
+            "type""boolean"
+        },
+        "query":{
+            "type":"string",
+            "oneOf": [
+                {"format": "ipv4"},
+                {"format": "hostname"}
+            ]
+        }
+    }
+}
