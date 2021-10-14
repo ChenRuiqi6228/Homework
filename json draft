@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "oneOf": [
+        {
+            "$ref": "ip-api_error_draft-07.json"
+        },
+        {
+            "$ref": "ip-api_success_draft-07.json"
+        }
+    ]
+}
