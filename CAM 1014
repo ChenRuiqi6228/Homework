@@ -1,0 +1,90 @@
+{the first code}
+clear
+px =[ -3 0 1 1.5 ];
+py = [ 2 1 -2 3 ];
+plot(px,py,'*','MarkerSize',10)
+axis ([ -3.5 2.5 -4 4 ])
+axis equal
+grid on
+ax = gca
+ax.XAxisLocation = 'origin';
+ax.YAxisLocation = 'origin';
+box off
+
+
+
+
+
+
+(classaxis)[zuo biao zhou dai ma] 
+{
+grid on
+ax = gca
+ax.XAxisLocation = 'origin';
+ax.YAxisLocation = 'origin';
+box off
+}
+
+{
+hold on
+hold off
+}                               [chuang kou bao chi yu guan bi]
+
+
+{the secnod code}
+clear
+px =[ -3 0 1 1.5 ];
+py = [ 2 1 -2 3 ];
+plot(px,py,'r--*','MarkerSize',10)
+hold on
+axis ([ -3.5 2.5 -4 4 ])
+axis equal
+classaxis
+rx = [ -2 2];
+ry = [1 3];
+% figure 
+plot(rx,ry,'bo','MarkerSize',10)
+hold off
+
+
+
+{the third code}
+clear
+syms x
+f(x) =sin(x);
+fplot(f,[-2*pi 2*pi] ,'m','LineWidth',3)
+hold on 
+axis equal
+classaxis
+plot( 0.5, f(0.5),'b*','MarkerSize',10)
+double(f(0.5))
+hold off
+
+
+
+
+
+syms  x y
+F(x,y) = x^2 + y^2 -1;
+fimplicit(F)
+hold on
+% A =(1,2)
+F(0,1)
+plot(0,1,'r*')
+axis equal
+
+
+
+
+
+
+
+
+syms t
+x(t) = t * cos(t);
+y(t) = t * sin(t);
+fplot(x(t),y(t),[0 20*pi])
+hold on
+axis equal
+t0 =12*pi
+plot (x(t0),y(t0),'r*','MarkerSize',10)
