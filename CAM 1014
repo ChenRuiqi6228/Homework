@@ -88,3 +88,286 @@ hold on
 axis equal
 t0 =12*pi
 plot (x(t0),y(t0),'r*','MarkerSize',10)
+
+
+
+
+
+syms t
+x(t) = t*cos(t);
+y(t) = t*sin(t);
+z(t) = t;
+fplot3(x, y, z, [0 12*pi])
+axis equal
+xlabel('x'); ylabel('y'); zlabel('z');
+
+
+
+
+syms t
+x(t) = t*cos(t);
+y(t) = t*sin(t);
+z(t) = t;
+fplot3(x, y, z, [0 12*pi])
+axis equal
+xlabel('x'); ylabel('y'); zlabel('z');
+t0 = 6*pi;
+P = [ x(t0), y(t0), z(t0) ];    //hua dian  
+hold on
+plot3( P(1), P(2), P(3), 'r*', ...
+    'MarkerSize', 5 )
+
+
+
+
+
+
+
+// class1028
+
+syms t
+x(t) = t*cos(t);
+y(t) = t*sin(t);
+z(t) = t;
+fplot3(x, y, z, [0 12*pi])
+axis equal
+xlabel('x'); ylabel('y'); zlabel('z');    // key word : label
+t0 = 6*pi;
+P = [ x(t0), y(t0), z(t0) ];
+hold on
+plot3( P(1), P(2), P(3), 'r*', ...    // hua tu 
+    'MarkerSize', 5 )
+xd(t) = diff(x, t);    // xiang liang
+yd(t) = diff(y, t);
+zd(t) = diff(z, t);
+v = [ xd(t0), yd(t0), zd(t0) ];
+
+
+
+
+
+
+syms t
+x(t) = t*cos(t);
+y(t) = t*sin(t);
+z(t) = t;
+fplot3(x, y, z, [0 12*pi])
+axis equal
+xlabel('x'); ylabel('y'); zlabel('z');
+t0 = 6*pi;
+P = [ x(t0), y(t0), z(t0) ];
+hold on
+plot3( P(1), P(2), P(3), 'r*', ...   // hua tu 
+    'MarkerSize', 5 )
+xd(t) = diff(x, t);   //xinag liang 
+yd(t) = diff(y, t);
+zd(t) = diff(z, t);
+v = [ xd(t0), yd(t0), zd(t0) ];
+quiver3( P(1), P(2), P(3),...    // key word:quiver
+    v(1), v(2), v(3),...
+    'r', 'LineWidth', 3)
+
+
+
+
+
+
+
+
+
+
+clear 
+syms x y
+f(x,y) = sin(x) + cos(y);
+fsurf( f );    // key word : fsurf
+axis equal
+xlabel('x');ylabel('y');zlabel('z');   
+
+
+
+
+
+
+
+clear 
+syms x y
+f(x,y) = sin(x) + cos(y);
+fsurf( f, [ -10 10 0 3 ]);
+axis equal
+xlabel('x');ylabel('y');zlabel('z');
+
+
+
+
+
+
+clear 
+syms x y
+f(x,y) = sin(x) + cos(y);
+fsurf( f, 'g' );
+axis equal
+xlabel('x');ylabel('y');zlabel('z');
+p = [2, 3, f(2,3)]
+hold on
+plot3( P(1), P(2), P(3), 'b', 'MarkerSize', 5)
+
+
+
+
+
+
+clear 
+syms x y
+f(x,y) = sin(x) + cos(y);
+fsurf( f, 'g' );
+axis equal
+xlabel('x');ylabel('y');zlabel('z');
+p = [2, 3, f(2,3)]
+hold on
+plot3( P(1), P(2), P(3), 'b', 'MarkerSize', 15)
+figure
+fimplicit(f, 'r', 'LineWidth', 3)
+
+
+
+
+
+clear
+syms x y z
+F(x,y,z) = x^2 + y^2 + z^2 -1;    // hua qiu
+fimplicit3(F)
+axis equal 
+
+
+
+
+
+
+
+
+clear
+syms x y z
+F(x,y,z) = x^2 + y^2 + z^2 -1;
+fimplicit3(F, [ 0 1 -1 1 -1 1 ])   // ban qiu 
+axis equal 
+% p = (1,0,0)
+F(1,0,0)
+
+
+
+
+
+clear
+syms x y z
+F(x,y,z) = x^2 + y^2 + z^2 -1;
+fimplicit3(F, [ 0 1 -1 1 0 1 ])  // 1/4 qiu
+axis equal 
+% p = (1,0,0)
+F(1,0,0)
+
+
+
+
+
+clear
+syms u v
+R = 2; r = 1;
+x(u,v) = (R + r*cos(v)) *cos(u);
+y(u,v) = (R + r*cos(v)) *sin(u);
+z(u,v) = r*sin(v);
+fsurf(x, y, z, [0 2*pi 0 2*pi])
+axis equal
+
+
+
+
+
+
+
+
+
+
+clear
+syms u v
+R = 2; r = 1;
+x(u,v) = (R + r*cos(v)) *cos(u);
+y(u,v) = (R + r*cos(v)) *sin(u);
+z(u,v) = r*sin(v);
+fsurf(x, y, z, [0 2*pi 0 2*pi])
+axis equal
+u0 = pi/2; v0 = pi/4;
+P = [ x(u0,v0),y(u0, v0),z(u0, v0) ];
+hold on
+plot3(P(1), P(2), P(3), 'r*', 'MarkerSize', 10);     // isourre:
+
+
+
+
+
+
+
+
+
+clear
+syms u v
+R = 2; r = 1;
+x(u,v) = (R + r*cos(v)) *cos(u);
+y(u,v) = (R + r*cos(v)) *sin(u);
+z(u,v) = r*sin(v);
+fsurf(x, y, z, [0 2*pi 0 2*pi])
+axis equal
+u0 = pi/2; v0 = pi/4;
+P = [ x(u0,v0),y(u0, v0),z(u0, v0) ];
+hold on
+plot3(P(1), P(2), P(3), 'r*', 'MarkerSize', 10);
+cx(u) = x(u, v0)
+
+
+
+
+
+
+
+clear
+syms u v
+R = 2; r = 1;
+x(u,v) = (R + r*cos(v)) *cos(u);
+y(u,v) = (R + r*cos(v)) *sin(u);
+z(u,v) = r*sin(v);
+fsurf(x, y, z, [0 2*pi 0 2*pi])
+axis equal
+u0 = pi/2; v0 = pi/4;
+P = [ x(u0,v0),y(u0, v0),z(u0, v0) ];
+hold on
+plot3(P(1), P(2), P(3), 'r*', 'MarkerSize', 10);
+cx(u) = x(u, v0);
+cy(u) = y(u, v0);
+cz(u) = z(u, v0);
+fplot(cx, cy, cz, [0 2*pi], 'r', 'LineWidth', 3)
+
+
+
+
+
+
+clear
+syms u v
+R = 2; r = 1;
+x(u,v) = (R + r*cos(v)) *cos(u);
+y(u,v) = (R + r*cos(v)) *sin(u);
+z(u,v) = r*sin(v);
+fsurf(x, y, z, [0 2*pi 0 2*pi], 'y')
+axis equal
+u0 = pi/2; v0 = pi/4;
+P = [ x(u0,v0),y(u0, v0),z(u0, v0) ];
+hold on
+plot3(P(1), P(2), P(3), 'r*', 'MarkerSize', 10);
+cx(u) = x(u, v0);
+cy(u) = y(u, v0);
+cz(u) = z(u, v0);
+fplot3(cx, cy, cz, [0 2*pi], 'r', 'LineWidth', 3)
+dx(v) = x(u0, v);
+dy(v) = y(u0, v);
+dz(v) = z(u0, v);
+fplot3(dx, dy, dz, [0 2*pi], 'b', 'LineWidth', 3)
+
