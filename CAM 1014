@@ -361,7 +361,7 @@ axis equal
 u0 = pi/2; v0 = pi/4;
 P = [ x(u0,v0),y(u0, v0),z(u0, v0) ];
 hold on
-plot3(P(1), P(2), P(3), 'r*', 'MarkerSize', 10);
+plot3(P(1), P(2), P(3), 'r*', 'MarkerSize', 10);   //
 cx(u) = x(u, v0);
 cy(u) = y(u, v0);
 cz(u) = z(u, v0);
@@ -371,3 +371,218 @@ dy(v) = y(u0, v);
 dz(v) = z(u0, v);
 fplot3(dx, dy, dz, [0 2*pi], 'b', 'LineWidth', 3)
 
+
+
+
+
+clear
+syms u v
+R=2;r=1;
+x(u,v) = (R+r*cos(v))*cos(u);
+y(u,v) = (R+r*cos(v))*sin(u);
+z(u,v)= r*sin(v);
+fsurf(x,y,z,[0 pi 0 2*pi],'y')
+axis equal
+u0= pi/2; v0= pi/4;
+P = [x(u0,v0),y(u0,v0),z(u0,v0)];
+hold on
+plot3( P(1) ,P(2), P(3), 'r*', ...
+    'MarkerSize',10)
+cx(u) = x(u,v0);
+cy(u) = y(u,v0);
+cz(u) = z(u,v0)
+fplot3(cx,cy,cz,[0,2*pi],'r','LineWidth',3)
+dx(v) = x(u0,v);
+dy(v) = y(u0,v);
+dz(v) = z(u0,v);
+fplot3(dx,dy,dz,[0,2*pi],'b','LineWidth',3)
+
+
+
+
+
+
+
+clear
+syms u v
+R=2;r=1;
+x(u,v) = (R+r*cos(v))*cos(u);
+y(u,v) = (R+r*cos(v))*sin(u);
+z(u,v)= r*sin(v);
+fsurf(x,y,z,[0 pi 0 2*pi],'y')
+axis equal
+u0= pi/2; v0= pi/4;
+P = [x(u0,v0),y(u0,v0),z(u0,v0)];
+hold on
+plot3( P(1) ,P(2), P(3), 'r*', ...
+    'MarkerSize',10)
+cx(u) = x(u,v0);
+cy(u) = y(u,v0);
+cz(u) = z(u,v0)
+fplot3(cx,cy,cz,[0,2*pi],'r','LineWidth',3)
+dx(v) = x(u0,v);
+dy(v) = y(u0,v);
+dz(v) = z(u0,v);
+fplot3(dx,dy,dz,[0,2*pi],'b','LineWidth',3)
+% tangent vector along c(u)  //drow the vector
+cxd(u) = diff (cx,u);
+cyd(u) = diff (cy,u);
+czd(u) = diff (cz,u);
+cv = [cxd(u0), cyd(u0), czd(u0) ];
+quiver3(P(1), P(2), P(3), cv(1), cv(2), cv(3), ...   
+    'LineWidth', 2)          //ues quiver3
+    
+    
+    
+    
+    
+    
+    
+clear
+syms u v
+R=2;r=1;
+x(u,v) = (R+r*cos(v))*cos(u);
+y(u,v) = (R+r*cos(v))*sin(u);
+z(u,v)= r*sin(v);
+fsurf(x,y,z,[0 pi 0 2*pi],'y')
+axis equal
+u0= pi/2; v0= pi/4;
+P = [x(u0,v0),y(u0,v0),z(u0,v0)];
+hold on
+plot3( P(1) ,P(2), P(3), 'r*', ...
+    'MarkerSize',10)
+cx(u) = x(u,v0);
+cy(u) = y(u,v0);
+cz(u) = z(u,v0)
+fplot3(cx,cy,cz,[0,2*pi],'r','LineWidth',3)    //
+dx(v) = x(u0,v);
+dy(v) = y(u0,v);
+dz(v) = z(u0,v);
+fplot3(dx,dy,dz,[0,2*pi],'b','LineWidth',3)     //
+% tangent vector along c(u)
+cxd(u) = diff (cx,u);
+cyd(u) = diff (cy,u);
+czd(u) = diff (cz,u);
+cv = [cxd(u0), cyd(u0), czd(u0) ];
+quiver3(P(1), P(2), P(3),cv(1), cv(2), cv(3),...
+    'LineWidth', 2)
+% tangent vector along d(y)   //drow the normal vector in 3D map
+dxd(v) = diff(dx,v);
+dyd(v) = diff(dy,v);
+dzd(v) = diff(dz,v);
+dv = [dxd(v0), dyd(v0), dzd(v0) ];  
+quiver3(P(1), P(2), P(3),dv(1), dv(2), dv(3),...
+    'LineWidth', 2)
+    
+    
+    
+    
+    
+    
+    
+    
+    clear
+syms u v
+R=2;r=1;
+x(u,v) = (R+r*cos(v))*cos(u);
+y(u,v) = (R+r*cos(v))*sin(u);
+z(u,v)= r*sin(v);
+fsurf(x,y,z,[0 pi 0 2*pi],'y')
+axis equal
+u0= pi/2; v0= pi/4;
+P = [x(u0,v0),y(u0,v0),z(u0,v0)];
+hold on
+plot3( P(1) ,P(2), P(3), 'r*', ...
+    'MarkerSize',10)
+cx(u) = x(u,v0);
+cy(u) = y(u,v0);
+cz(u) = z(u,v0)
+fplot3(cx,cy,cz,[0,2*pi],'r','LineWidth',3)
+dx(v) = x(u0,v);
+dy(v) = y(u0,v);
+dz(v) = z(u0,v);
+fplot3(dx,dy,dz,[0,2*pi],'b','LineWidth',3)
+% tangent vector along c(u)
+cxd(u) = diff (cx,u);
+cyd(u) = diff (cy,u);
+czd(u) = diff (cz,u);
+cv = [cxd(u0), cyd(u0), czd(u0) ];
+quiver3(P(1), P(2), P(3),cv(1), cv(2), cv(3),...
+    'LineWidth', 2)
+% tangent vector along d(y)
+dxd(v) = diff(dx,v);
+dyd(v) = diff(dy,v);
+dzd(v) = diff(dz,v);
+dv = [dxd(v0), dyd(v0), dzd(v0) ];  
+quiver3(P(1), P(2), P(3),dv(1), dv(2), dv(3),...
+    'LineWidth', 2)
+%normal      //drow the  of cv and dv
+n = cross(cv, dv);
+quiver3(P(1), P(2), P(3),n(1), n(2), n(3),...
+    'LineWidth', 2)
+    
+    
+    
+    
+    
+    
+    
+clear
+px = [0, 2, 3, 5];py = [1, 2, 5, 3];
+t1 = 0; t2 = 1; t3 = 2; t4 = 4;
+plot(px, py, 'b*');
+axis equal;
+hold on;
+syms a3 a2 a1 a0  
+ex = [ a3*t1^3 + a2*t1^2 + a1*t1 + a0 == px(1), ...
+       a3*t2^3 + a2*t2^2 + a1*t2 + a0 == px(2), ...
+       a3*t3^3 + a2*t3^2 + a1*t3 + a0 == px(3), ...
+       a3*t4^3 + a2*t4^2 + a1*t4 + a0 == px(4)  ]
+rx = solve(ex, [a3 a2 a1 a0 ]); 
+syms t
+x(t) = rx.a3*t^3 + rx.a2*t^2 + rx.a1*t + rx.a0
+syms b3 b2 b1 b0  
+ey = [ b3*t1^3 + b2*t1^2 + b1*t1 + b0 == py(1), ...
+       b3*t2^3 + b2*t2^2 + b1*t2 + b0 == py(2), ...
+       b3*t3^3 + b2*t3^2 + b1*t3 + b0 == py(3), ...
+       b3*t4^3 + b2*t4^2 + b1*t4 + b0 == py(4)  ]
+ry = solve(ey,[b3 b2 b1 b0]);
+y(t) = ry.b3*t^3 + ry.b2*t^2 + ry.b1*t + ry.b0
+fplot(x,y,[t1 t4],'r')
+
+
+
+
+
+
+
+
+clear
+px = [1,4]; py = [1,2];
+vx = [1,2]; vy = [3,-3];
+t1 = 0;
+t2 = 1;
+plot(px,py,'b*');
+axis equal;
+hold on;
+quiver(px(1), py(1), vx(1), vy(1));
+quiver(px(2), py(2), vx(2), vy(2));
+syms a3 a2 a1 a0 t
+x(t) = a3*t^3 + a2*t^2 + a1*t + a0;
+xd(t) = diff(x,t);
+ex = [ x(t1) == px(1), ...
+       x(t2) == px(2), ...
+       xd(t1) == vx(1), ...
+       xd(t2) == vx(2),]
+rx = solve(ex, [a3 a2 a1 a0]);
+cx(t) = subs(x, [a3 a2 a1 a0], [rx.a3 rx.a2 rx.a1 rx.a0])
+syms b3 b2 b1 b0
+y(t) = b3*t^3 + b2*t^2 + b1*t + b0;
+yd(t) = diff(y,t);
+ey = [ y(t1) == py(1), ...
+       y(t2) == py(2), ...
+       yd(t1) == vy(1), ...
+       yd(t2) == vy(2),]
+ry = solve(ey, [b3 b2 b1 b0]);
+cy(t) = subs(y, [b3 b2 b1 b0], [ry.b3 ry.b2 ry.b1 ry.b0])
+fplot(cx, cy, [t1 t2], 'r')
