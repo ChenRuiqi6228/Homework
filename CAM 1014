@@ -586,3 +586,82 @@ ey = [ y(t1) == py(1), ...
 ry = solve(ey, [b3 b2 b1 b0]);
 cy(t) = subs(y, [b3 b2 b1 b0], [ry.b3 ry.b2 ry.b1 ry.b0])
 fplot(cx, cy, [t1 t2], 'r')
+
+
+
+
+
+
+
+
+
+拓展画曲线
+
+
+clear
+px = [1, 3, 5]; py = [1, 4, 1.5];
+vx = [3]; vy = [0];
+t1 = 0;
+t2 = 1;
+t3 = 2;
+plot(px,py,'b*');
+axis equal;
+hold on;
+quiver(px(2), py(2), vx(1), vy(1));
+syms a3 a2 a1 a0 t
+x(t) = a3*t^3 + a2*t^2 + a1*t + a0;
+xd(t) = diff(x,t);
+ex = [ x(t1) == px(1), ...
+       x(t2) == px(2), ...
+       x(t3) == px(3), ...
+       xd(t2) == vx(1),]   //向量
+rx = solve(ex, [a3 a2 a1 a0]);
+cx(t) = subs(x, [a3 a2 a1 a0], [rx.a3 rx.a2 rx.a1 rx.a0])
+syms b3 b2 b1 b0
+y(t) = b3*t^3 + b2*t^2 + b1*t + b0;
+yd(t) = diff(y,t);
+ey = [ y(t1) == py(1), ...
+       y(t2) == py(2), ...
+       y(t3) == py(3), ...
+       yd(t2) == vy(1),]   //向量
+ry = solve(ey, [b3 b2 b1 b0]);
+cy(t) = subs(y, [b3 b2 b1 b0], [ry.b3 ry.b2 ry.b1 ry.b0])
+fplot(cx, cy, [t1 t3], 'r') 
+
+
+
+
+
+
+
+
+
+
+
+clear
+px = [1,3, 5, 7]; py = [1,4, 4, 2];
+t1 = 0;
+t2 = 1;
+t3 = 2;
+t4 = 3;
+plot(px, py,'b*');
+syms a3 a2 a1 a0 b3 b2 b1 b0 t
+x(t) = a3*t^3 + a2*t^2 + a1*t + a0;
+y(t) = b3*t^3 + b2*t^2 + b1*t + b0;
+xd(t) = diff(x, t);
+yd(t) = diff(y, t);
+ex = [ x(t1)  == px(1), x(t2) == px(2), x(t3) == px(3),...
+    x(t4) == px(4)];
+sx = solve(ex, [a3 a2 a1 a0]);
+cx(t) = subs(x, [a3 a2 a1 a0], [sx.a3 sx.a2 sx.a1 sx.a0])
+ey = [ y(t1)  == py(1), y(t2) == py(2), y(t3) == py(3),...
+    y(t4) == py(4)];
+sy = solve(ey, [b3 b2 b1 b0]);
+cy(t) = subs(y, [b3 b2 b1 b0], [sy.b3 sy.b2 sy.b1 sy.b0])
+hold on;
+axis equal;
+fplot(cx, cy,[t1 t4])
+cxd(t) = subs(x, [a3 a2 a1 a0], [sx.a3 sx.a2 sx.a1 sx.a0])
+cyd(t) = subs(y, [b3 b2 b1 b0], [sy.b3 sy.b2 sy.b1 sy.b0])
+vx =cxd(t4); vy = cyd(t4);
+quiver(px(4), py(4), vx, vy)
